@@ -1,0 +1,16 @@
+/*атомарные классы*/
+.bimg, .bimg img {
+    display: block;
+    width: 100%;
+}
+.tag_area {
+    display: flex;
+    gap: 5px;
+}
+.tag_area .tag {
+    display: block;
+    background-color: #318be7;
+    color: #fff;
+    padding: 2px 5px;
+    text-decoration: none;
+}
