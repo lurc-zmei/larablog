@@ -11,7 +11,7 @@
 
 <div class="container">
     <header>
-        <a href="/" id="logo"><img src="{{ Vite::asset('resources/images/logo.svg') }}" alt=""></a>
+        <a href="/" id="logo"><img src="{{-- Vite::asset('resources/images/logo.svg') --}}" alt=""></a>
     </header>
 
     @yield('content')
