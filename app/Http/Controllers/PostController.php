@@ -31,4 +31,10 @@ class PostController extends Controller
         $newPost = Post::create($request->validated());
         return redirect()->route('post.show', $newPost->id);
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('home');
+    }
 }

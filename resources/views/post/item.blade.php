@@ -6,5 +6,10 @@
     <div class="text">
         {{ $post->content }}
     </div>
+    <form action="{{ route('post.destroy', $post->id) }}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="Удалить статью">
+    </form>
 </div>
 @endsection
