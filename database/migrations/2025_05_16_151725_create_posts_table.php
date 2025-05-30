@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // 'posts' - название создаваемой таблицы
         Schema::create('posts', function (Blueprint $table) {
+            // Список полей в таблице 'posts'
             $table->id();
             $table->string('title');
-            $table->text('anons');
+            $table->text('anons')->nullable(); // nullable() делает поле необязательным для заполнения
             $table->text('content');
             $table->timestamps();
         });
