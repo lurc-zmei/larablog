@@ -32,6 +32,17 @@ class PostController extends Controller
         return redirect()->route('post.show', $newPost->id);
     }
 
+    public function edit(Post $post)
+    {
+        return view('post.edit', compact('post'));
+    }
+
+    public function update(PostRequest $request, Post $post)
+    {
+        $post->update($request->validated());
+        return redirect()->route('post.show', compact('post'));
+    }
+
     public function destroy(Post $post)
     {
         $post->delete();

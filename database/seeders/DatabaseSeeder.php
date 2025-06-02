@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
                 [
                     'title' => 'test1',
                     'anons' => 'testanons1',
-                    'content' => 'testcontent1',
+                    'content' => 'Сегодня <strong>хорошая</strong> погода',
                 ],
                 [
                     'title' => 'test2',
