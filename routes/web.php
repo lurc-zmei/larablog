@@ -21,3 +21,7 @@ Route::post('/post/store', [PostController::class, 'store'])->name('post.store')
 Route::get('/post/edit/{post}', [PostController::class, 'edit'])->name('post.edit');
 Route::patch('/post/update/{post}', [PostController::class, 'update'])->name('post.update');
 Route::delete('/post/delete/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('/post/restore/{post}', [PostController::class, 'restore'])->name('post.restore');
+
+Route::get('/post/trashed', [PostController::class, 'trashed'])->name('post.trashed');
+Route::get('/post/deletehard/{post}', [PostController::class, 'destroyHard'])->name('post.delete.hard');

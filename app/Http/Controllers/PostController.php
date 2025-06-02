@@ -17,6 +17,12 @@ class PostController extends Controller
         return view('index', compact('posts')); // Аргументы ('название шаблона', 'передаваемые данные')
     }
 
+    public function trashed()
+    {
+        $posts = Post::onlyTrashed()->get()->reverse(); // reverse() вывод в обратном порядке
+        return view('index', compact('posts'));
+    }
+
     public function show(Post $post)
     {
         return view('post.item', compact('post'));
@@ -48,4 +54,18 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('home');
     }
+
+
+    public function restore($id)
+    {
+        Post::withTrashed()->find($id)->restore();
+        return back();
+    }
+
+    public function destroyHard($id)
+    {
+        $forceDeleteStatus = Post::where('id', $id)->forceDelete();
+        return redirect()->route('home');
+    }
+
 }

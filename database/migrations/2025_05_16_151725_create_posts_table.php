@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('anons')->nullable(); // nullable() делает поле необязательным для заполнения
             $table->text('content');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

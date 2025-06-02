@@ -11,8 +11,9 @@
         <form action="{{ route('post.destroy', $post->id) }}" method="post">
             @csrf
             @method('delete')
-            <input type="submit" class="btn" value="Удалить статью">
+            <input type="submit" class="btn" value="Удалить мягко">
         </form>
+        <a href="{{ route('post.delete.hard', $post->id) }}" class="btn">Удалить жестко</a>
     </div>
 </div>
 @endsection

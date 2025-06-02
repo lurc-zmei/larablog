@@ -14,7 +14,7 @@
         <a href="/" id="logo"><img src="{{-- Vite::asset('resources/images/logo.svg') --}}" alt=""></a>
         <a href="{{ route('home') }}">Главная</a>
         <a href="{{ route('post.create') }}">Новая статья</a>
-
+        <a href="{{ route('post.trashed') }}">Удаленные статьи</a>
     </header>
 
     @yield('content')
