@@ -12,7 +12,7 @@
             </div>
             <div class="category_area">
                 <a href="">Питание</a>
-                <span class="published_at">{{ $post->createdRu }}</span>
+                <span class="published_at">{{ $post->created_ru }}</span>
                 @if($post->deleted_at)
                     <a href="{{ route('post.restore', $post->id) }} " class="btn">Восстановить</a>
 
