@@ -12,7 +12,7 @@
             </div>
             <div class="category_area">
                 <a href="">Питание</a>
-                <span class="published_at">20 апреля 2025, в 16:45</span>
+                <span class="published_at">{{ $post->createdRu }}</span>
                 @if($post->deleted_at)
                     <a href="{{ route('post.restore', $post->id) }} " class="btn">Восстановить</a>
 
