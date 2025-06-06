@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,20 +23,45 @@ class DatabaseSeeder extends Seeder
                 ]);
         */
         $list = [
+            'category' => [
+                ['title' => 'Питание'],
+                ['title' => 'Здоровье'],
+            ],
             'post' => [
                 [
-                    'title' => 'test1',
-                    'anons' => 'testanons1',
+                    'title' => 'Рецепты с гречкой',
+                    'anons' => 'testanons 1',
                     'content' => 'Сегодня <strong>хорошая</strong> погода',
+                    'category_id' => 1,
                 ],
                 [
-                    'title' => 'test2',
-                    'anons' => 'testanons2',
-                    'content' => 'testcontent2',
+                    'title' => 'Как делать гиперэкстензию',
+                    'anons' => 'testanons 2',
+                    'content' => 'testcontent 2',
+                    'category_id' => 2,
+                ],
+                [
+                    'title' => 'Про капусту',
+                    'anons' => 'testanons 3',
+                    'content' => 'testcontent 3',
+                    'category_id' => 1,
+                ],
+                [
+                    'title' => 'Прыжки со скакалкой',
+                    'anons' => 'testanons 4',
+                    'content' => 'testcontent 4',
+                    'category_id' => 2,
+                ],
+                [
+                    'title' => 'Вечерний моцион',
+                    'anons' => 'testanons 5',
+                    'content' => 'testcontent 5',
+                    'category_id' => 2,
                 ],
             ]
         ];
 
+        foreach ($list['category'] as $item) Category::factory()->create($item);
         foreach ($list['post'] as $item) Post::factory()->create($item);
     }
 }

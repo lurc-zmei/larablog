@@ -1,8 +1,10 @@
 @extends('app')
 
 @section('content')
+
 <div id="post_item">
     <h2 class="name">{{ $post->title }}</h2>
+    <p>Категория: {{ $post->category->title }}</p>
     <div class="text">
         {!! $post->content !!}
     </div>

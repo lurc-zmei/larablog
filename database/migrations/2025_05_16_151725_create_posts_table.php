@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('title');
             $table->text('anons')->nullable(); // nullable() делает поле необязательным для заполнения
             $table->text('content');
+
+            // Внешний ключ на категорию.
+            // В constrained() можно явно указать таблицу на которую будет ссылаться внешний ключ.
+            // cascadeOnDelete() обеспечит консистентность (ACID) данных, т.е. если категория будет удалена, все посты, которые ей принадлежат тоже будут удалены.
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete(); //'categories'
+
             $table->timestamps();
             $table->softDeletes();
         });

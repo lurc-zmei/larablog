@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +40,9 @@ Route::prefix('/post')->controller(PostController::class)->name('post.')->group(
     Route::get('/restore/{post}', 'restore')->name('restore');
     Route::get('/trashed', 'trashed')->name('trashed');
     Route::get('/deletehard/{post}', 'destroyHard')->name('delete.hard');
+});
+
+// Категории
+Route::prefix('/category')->controller(CategoryController::class)->name('category.')->group(function () {
+    Route::get('/item/{category}', 'show')->name('show');
 });

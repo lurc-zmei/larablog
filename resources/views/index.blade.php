@@ -11,7 +11,7 @@
                 <img src="{{-- Vite::asset('resources/images/post/1.jpg') --}}" class="bimg" alt="">
             </div>
             <div class="category_area">
-                <a href="">Питание</a>
+                <a href="{{ route('category.show', $post->category->id) }}"> {{ $post->category->title }}</a>
                 <span class="published_at">{{ $post->created_ru }}</span>
                 @if($post->deleted_at)
                     <a href="{{ route('post.restore', $post->id) }} " class="btn">Восстановить</a>
