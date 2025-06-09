@@ -44,5 +44,6 @@ Route::prefix('/post')->controller(PostController::class)->name('post.')->group(
 
 // Категории
 Route::prefix('/category')->controller(CategoryController::class)->name('category.')->group(function () {
+    Route::get('/', 'index')->name('index');
     Route::get('/item/{category}', 'show')->name('show');
 });

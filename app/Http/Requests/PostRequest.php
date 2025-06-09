@@ -25,6 +25,7 @@ class PostRequest extends FormRequest
             'title' => 'required|string',
             'anons' => 'nullable|string',
             'content' => 'required|string',
+            'category_id' => 'required|integer',
         ];
     }
 

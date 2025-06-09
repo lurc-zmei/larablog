@@ -14,6 +14,14 @@
             <textarea rows="5" cols="33" placeholder="Текст статьи" name="content">{{ $post->content }}</textarea>
             @error("content") {{ $message }} @enderror
         </div>
+        <div>
+            <select name="category_id" id="">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" @if($category->id == $post->category_id) selected @endif>{{ $category->title }}</option>
+                @endforeach
+            </select>
+            @error("category_id") {{ $message }} @enderror
+        </div>
         @csrf
         @method('patch')
         <input type="submit" value="Изменить пост">

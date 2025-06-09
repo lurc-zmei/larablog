@@ -4,7 +4,7 @@
 
 <div id="post_item">
     <h2 class="name">{{ $post->title }}</h2>
-    <p>Категория: {{ $post->category->title }}</p>
+    <p>Категория: <a href="{{ route('category.show', $post->category->id) }}">{{ $post->category->title }}</a></p>
     <div class="text">
         {!! $post->content !!}
     </div>

@@ -12,9 +12,12 @@
 <div class="container">
     <header>
         <a href="/" id="logo"><img src="{{-- Vite::asset('resources/images/logo.svg') --}}" alt=""></a>
-        <a href="{{ route('home') }}">Главная</a>
-        <a href="{{ route('post.create') }}">Новая статья</a>
-        <a href="{{ route('post.trashed') }}">Удаленные статьи</a>
+        <nav>
+            <a href="{{ route('home') }}" class="link">Главная</a>
+            <a href="{{ route('category.index') }}" class="link">Категории</a>
+            <a href="{{ route('post.create') }}" class="link">Новая статья</a>
+            <a href="{{ route('post.trashed') }}" class="link">Удаленные статьи</a>
+        </nav>
     </header>
 
     @yield('content')
